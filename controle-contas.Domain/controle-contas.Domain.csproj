@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0274D7A2-9052-4E2A-8E87-AC82407223F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>controle_contas.Domain</RootNamespace>
+    <AssemblyName>controle-contas.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Transacao.cs" />
+    <Compile Include="Entities\Conta.cs" />
+    <Compile Include="Entities\PessoaJuridica.cs" />
+    <Compile Include="Entities\PessoaFisica.cs" />
+    <Compile Include="Interfaces\Repositories\ITransacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IContaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPessoaJuridicaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPessoaFisicaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Services\ITransacaoService.cs" />
+    <Compile Include="Interfaces\Services\IContaService.cs" />
+    <Compile Include="Interfaces\Services\IPessoaJuridicaService.cs" />
+    <Compile Include="Interfaces\Services\IPessoaFisicaService.cs" />
+    <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TransacaoService.cs" />
+    <Compile Include="Services\ContaService.cs" />
+    <Compile Include="Services\PessoaJuridicaService.cs" />
+    <Compile Include="Services\PessoaFisicaService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="ValueObject\Cnpj.cs" />
+    <Compile Include="ValueObject\Cpf.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\controle-contas.Helpers\controle-contas.Helpers.csproj">
+      <Project>{11f899d5-4cca-4a72-be5c-cb061634cfb3}</Project>
+      <Name>controle-contas.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
